@@ -1,0 +1,25 @@
+{
+  "name": "hng_task2",
+  "version": "1.0.0",
+  "description": "building RESTful APIs using NodeJS + postgreSQL for DB, also implementing unit testing",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrevailUzodinma/HNG_task2.git"
+  },
+  "author": "iPrevail",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PrevailUzodinma/HNG_task2/issues"
+  },
+  "homepage": "https://github.com/PrevailUzodinma/HNG_task2#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
