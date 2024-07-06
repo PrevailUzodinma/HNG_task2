@@ -3,11 +3,14 @@ dotenv.config();
 const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
+const authrouter = require("./routes/auth.router");
 const router = require("./routes/index.router");
+const connectDB = require("./config/connect_db");
+
 const app = express();
 
 // Connect to Database
-
+connectDB;
 
 // allow requests from any origin
 app.use(cors({}));
@@ -27,7 +30,9 @@ app.use((req, res, next) => {
 app.use(cookieParser());
 
 // use router
-app.use('/api/', router)
+//app.use('/auth/', authrouter);
+//app.use('/api/', router);
+
 
 // start the server and listen
 const PORT = process.env.PORT || 4000;
