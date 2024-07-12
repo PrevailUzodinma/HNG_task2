@@ -2,7 +2,7 @@
   "name": "hng_task2",
   "version": "1.0.0",
   "description": "building RESTful APIs using NodeJS + postgreSQL for DB, also implementing unit testing",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
