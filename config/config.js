@@ -1,4 +1,4 @@
-require('dotenv').config(); // Load environment variables from .env file
+require("dotenv").config(); // Load environment variables from .env file
 
 module.exports = {
   development: {
@@ -7,6 +7,9 @@ module.exports = {
     database: process.env.DB_DATABASE,
     host: process.env.DB_HOST,
     dialect: process.env.DB_DIALECT,
+    define: {
+      timestamps: true,
+    },
   },
   test: {
     username: process.env.DB_USERNAME,
@@ -14,6 +17,9 @@ module.exports = {
     database: process.env.DB_DATABASE_TEST,
     host: process.env.DB_HOST,
     dialect: process.env.DB_DIALECT,
+    define: {
+      timestamps: true,
+    },
   },
   production: {
     username: process.env.DB_USERNAME,
@@ -21,5 +27,8 @@ module.exports = {
     database: process.env.DB_DATABASE_PRODUCTION,
     host: process.env.DB_HOST,
     dialect: process.env.DB_DIALECT,
+    define: {
+      timestamps: true,
+    },
   },
 };

@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/config'); // the path to my database config file
+const sequelize = require('../config/database'); // the path to my database config file
 
 class User extends Model {}
 

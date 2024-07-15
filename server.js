@@ -5,12 +5,11 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const authrouter = require("./routes/auth.router");
 const router = require("./routes/index.router");
-const connectDB = require("./config/connect_db");
+const syncModels = require("./config/sync");
+const port = process.env.PORT || 4000;
+
 
 const app = express();
-
-// Connect to Database
-connectDB;
 
 // allow requests from any origin
 app.use(cors({}));
@@ -35,7 +34,15 @@ app.use(cookieParser());
 
 
 // start the server and listen
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
+async function startServer() {
+  try {
+    await syncModels(); // Sync models with the database
+    app.listen(port, () => {
+      console.log(`Server is running on ${port}`);
+    });
+  } catch (error) {
+    console.error('Error starting server:', error);
+  }
+}
+
+startServer();
